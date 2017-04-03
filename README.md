@@ -1,6 +1,7 @@
 <h1>Automation projects for Android and iOS using the Appium automation test framework</h1>
 
 <h3>Projects covered so far:</h3>
+
 *Android*
 <ul>
 	<li>Dialer (built-in)</li>
