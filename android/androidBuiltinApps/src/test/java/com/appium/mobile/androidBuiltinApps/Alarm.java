@@ -2,6 +2,7 @@ package com.appium.mobile.androidBuiltinApps;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
@@ -28,6 +29,8 @@ DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("appActivity", "ClockPackage");
 
 		AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 		new TouchAction(driver).longPress((WebElement) driver.findElementsByClassName("android.widget.NumberPicker").get(0)).release().perform();
 		

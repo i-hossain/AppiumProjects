@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -28,6 +29,8 @@ public class Phone {
 		capabilities.setCapability("appActivity", "DialtactsActivity");
 
 		AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 		// Extract Phone Number
 		Scanner input = new Scanner(System.in);
